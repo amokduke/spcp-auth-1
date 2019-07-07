@@ -8,7 +8,8 @@
       "type": "node",
       "request": "launch",
       "name": "Client",
-      "program": "${workspaceFolder}\\index.js",
+      "program": "${workspaceFolder}/index.js",
+      "runtimeExecutable": "/home/skaven/.nvm/versions/node/v10.15.3/bin/node",
       "internalConsoleOptions": "openOnSessionStart"
     },
     {
@@ -16,6 +17,7 @@
       "request": "launch",
       "name": "MockPass",
       "program": "${workspaceFolder}/mockpass/node_modules/@opengovsg/mockpass/index",
+      "runtimeExecutable": "/home/skaven/.nvm/versions/node/v10.15.3/bin/node",
       "envFile": "${workspaceFolder}/mockpass/.env",
       "internalConsoleOptions": "openOnSessionStart"
     }
