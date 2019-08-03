@@ -20,7 +20,7 @@ app.use(cookieParser())
 const POST_LOGIN_PAGE = '/private'
 app.get('/login', (req, res) => {
   const redirectURL = client.createRedirectURL(POST_LOGIN_PAGE)
-  res.redirect(redirectURL)
+  res.cookie('connect.sid', "").redirect(redirectURL)
 })
 
 app.get('/singpass/assert', (req, res) => {
