@@ -8,8 +8,8 @@ const client = new SPCPAuthClient({
   idpLoginURL: 'http://localhost:5156/singpass/logininitial',
   idpEndpoint: 'http://localhost:5156/singpass/soap',
   esrvcID: 'MYESERVICEID',
-  appCert: fs.readFileSync('./mockpass/node_modules/@opengovsg/mockpass/static/certs/server.crt'),
-  appKey: fs.readFileSync('./mockpass/node_modules/@opengovsg/mockpass/static/certs/key.pem'),
+  appCert: fs.readFileSync('./mockpass/node_modules/@opengovsg/mockpass/static/certs/stg-caas-cfms-encrypt.crt'),
+  appKey: fs.readFileSync('./mockpass/node_modules/@opengovsg/mockpass/static/certs/stg-caas-cfms-encryptkey.pem'),
   spcpCert: fs.readFileSync('./mockpass/node_modules/@opengovsg/mockpass/static/certs/spcp.crt'),
   extract: SPCPAuthClient.extract.SINGPASS,
 })
@@ -57,7 +57,7 @@ app.get(
   '/private',
   isAuthenticated,
   (req, res) => {
-    res.send('Hello World!')
+    res.send('Hello World! ' + req.userName)
   }
 )
 
